@@ -186,7 +186,7 @@ def prompt_timeout(action=None, success=None, container=None, results=None, hand
         return
 
     # call connected blocks for 'else' condition 2
-    pin_2(action=action, success=success, container=container, results=results, handle=handle)
+    User_prompt_timed_out(action=action, success=success, container=container, results=results, handle=handle)
 
     return
 
@@ -207,7 +207,7 @@ def event_promote(action=None, success=None, container=None, results=None, handl
         return
 
     # call connected blocks for 'else' condition 2
-    add_comment_set_status_3(action=action, success=success, container=container, results=results, handle=handle)
+    User_declined_action(action=action, success=success, container=container, results=results, handle=handle)
 
     return
 
@@ -225,12 +225,12 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
-        format_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        Compose_comment(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
-def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('format_1() called')
+def Compose_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('Compose_comment() called')
     
     template = """Virus positives {0} are below threshold 10, closing event."""
 
@@ -239,7 +239,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
         "artifact:*.cef.sourceDnsDomain",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+    phantom.format(container=container, template=template, parameters=parameters, name="Compose_comment")
 
     set_status_1(container=container)
 
@@ -252,15 +252,15 @@ def set_status_1(action=None, success=None, container=None, results=None, handle
 
     return
 
-def pin_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('pin_2() called')
+def User_prompt_timed_out(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('User_prompt_timed_out() called')
 
     phantom.pin(container=container, data="", message="Awaiting Action", pin_type="card", pin_style="red", name="User failed to promote event within time limit")
 
     return
 
-def add_comment_set_status_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('add_comment_set_status_3() called')
+def User_declined_action(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('User_declined_action() called')
 
     results_data_1 = phantom.collect2(container=container, datapath=['Notify_IT:action_result.parameter.message'], action_results=results)
 
@@ -295,14 +295,14 @@ def Promote_Reason(action=None, success=None, container=None, results=None, hand
     # build parameters list for 'Promote_Reason' call
     for results_item_1 in results_data_1:
         parameters.append({
-            'name': "User created artifact",
             'container_id': "",
-            'label': "event",
-            'source_data_identifier': id_value,
-            'cef_name': results_item_1[0],
-            'cef_value': results_item_1[0],
-            'cef_dictionary': "",
+            'name': "User created artifact",
             'contains': "",
+            'source_data_identifier': id_value,
+            'label': "event",
+            'cef_value': results_item_1[0],
+            'cef_name': results_item_1[0],
+            'cef_dictionary': "",
             # context (artifact id) is added to associate results with the artifact
             'context': {'artifact_id': results_item_1[1]},
         })
