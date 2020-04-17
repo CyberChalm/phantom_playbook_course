@@ -198,7 +198,7 @@ def event_promote(action=None, success=None, container=None, results=None, handl
         container=container,
         action_results=results,
         conditions=[
-            ["Notify_IT:action_result.status", "==", "Notify_IT:action_result.summary.responses.0=\"Yes\""],
+            ["Notify_IT:action_result.summary.responses.0", "==", "Yes"],
         ])
 
     # call connected blocks if condition 1 matched
