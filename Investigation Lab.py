@@ -7,17 +7,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'geolocate_ip_1' block
-    geolocate_ip_1(container=container)
-
-    # call 'file_reputation_1' block
-    file_reputation_1(container=container)
-
-    # call 'domain_reputation_2' block
-    domain_reputation_2(container=container)
-
-    # call 'Check_hash' block
-    Check_hash(container=container)
+    # call 'Ran_Before' block
+    Ran_Before(container=container)
 
     return
 
@@ -391,6 +382,26 @@ def Check_hash(action=None, success=None, container=None, results=None, handle=N
     
     # call playbook "phantom_playbook_course/Log File Hashes", returns the playbook_run_id
     playbook_run_id = phantom.playbook("phantom_playbook_course/Log File Hashes", container=container)
+
+    return
+
+def Ran_Before(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('Ran_Before() called')
+
+    # check for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        conditions=[
+            ["artifact:*.source_data_identifier", "!=", "Investigation Lab"],
+        ])
+
+    # call connected blocks if condition 1 matched
+    if matched_artifacts_1 or matched_results_1:
+        geolocate_ip_1(action=action, success=success, container=container, results=results, handle=handle)
+        file_reputation_1(action=action, success=success, container=container, results=results, handle=handle)
+        domain_reputation_2(action=action, success=success, container=container, results=results, handle=handle)
+        Check_hash(action=action, success=success, container=container, results=results, handle=handle)
+        return
 
     return
 

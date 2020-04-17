@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
+            "hash": "a0ba43d9340f4196ffaa80b54a00094290167e90",
             "joint": {
                 "cells": [
                     {
@@ -314,8 +315,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 45,
-                        "line_start": 24,
+                        "line_end": 36,
+                        "line_start": 15,
                         "message": "Configuring now",
                         "name": "geolocate ip",
                         "notes": "Determine origin",
@@ -1080,8 +1081,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 66,
-                        "line_start": 45,
+                        "line_end": 57,
+                        "line_start": 36,
                         "message": "Configuring now",
                         "name": "domain reputation",
                         "notes": "",
@@ -1209,7 +1210,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'geolocate_ip_1' block\n    geolocate_ip_1(container=container)\n\n    # call 'file_reputation_1' block\n    file_reputation_1(container=container)\n\n    # call 'domain_reputation_2' block\n    domain_reputation_2(container=container)\n\n    # call 'Check_hash' block\n    Check_hash(container=container)\n\n    return",
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'Ran_Before' block\n    Ran_Before(container=container)\n\n    return",
                         "callback_code": "# read-only block view not available",
                         "callback_start": 1,
                         "callsback": false,
@@ -1230,7 +1231,7 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 24,
+                        "line_end": 15,
                         "line_start": 7,
                         "name": "",
                         "notes": "",
@@ -1292,7 +1293,7 @@
                             }
                         },
                         "position": {
-                            "x": 120,
+                            "x": -160,
                             "y": 300
                         },
                         "previous_function": "",
@@ -1307,123 +1308,6 @@
                         "type": "coa.StartEnd",
                         "warn": false,
                         "z": 39
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "d7936da7-e801-4366-a444-21e7ed67778e",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "9a37017f-1157-4d3a-b6e0-02c73c6d2db5",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "11ff6099-1b12-4017-a4d3-47f01732d31b",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 40
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "c044864e-6adf-431a-a898-77f0bcf70c6c",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "9a37017f-1157-4d3a-b6e0-02c73c6d2db5",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "805cf94c-3fec-4be8-baef-fc7656753271",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 41
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "47c64270-6efd-402d-86c1-ad34c4887e1f",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "9a37017f-1157-4d3a-b6e0-02c73c6d2db5",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "ea9a7713-dce4-496f-a53d-f2538fef69fb",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 42
                     },
                     {
                         "0": "E",
@@ -1491,12 +1375,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 410,
-                        "line_start": 397,
+                        "line_end": 421,
+                        "line_start": 408,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 22,
+                        "order": 23,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -1837,8 +1721,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 224,
-                        "line_start": 206,
+                        "line_end": 215,
+                        "line_start": 197,
                         "name": "filter",
                         "notes": "",
                         "number": 2,
@@ -4661,8 +4545,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 87,
-                        "line_start": 66,
+                        "line_end": 78,
+                        "line_start": 57,
                         "message": "Configuring now",
                         "name": "file reputation",
                         "notes": "",
@@ -4831,8 +4715,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 185,
-                        "line_start": 164,
+                        "line_end": 176,
+                        "line_start": 155,
                         "name": "decision",
                         "notes": "",
                         "number": 2,
@@ -5145,8 +5029,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 275,
-                        "line_start": 267,
+                        "line_end": 266,
+                        "line_start": 258,
                         "message": "Configuring now",
                         "name": "phantom_playbook_course/Case Promotion Lab",
                         "notes": "",
@@ -5695,8 +5579,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 306,
-                        "line_start": 275,
+                        "line_end": 297,
+                        "line_start": 266,
                         "message": "Configuring now",
                         "name": "add artifact",
                         "notes": "",
@@ -5863,8 +5747,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 240,
-                        "line_start": 224,
+                        "line_end": 231,
+                        "line_start": 215,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -6045,8 +5929,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 247,
-                        "line_start": 240,
+                        "line_end": 238,
+                        "line_start": 231,
                         "message": "Configuring now",
                         "name": "set status",
                         "notes": "",
@@ -6224,8 +6108,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 254,
-                        "line_start": 247,
+                        "line_end": 245,
+                        "line_start": 238,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -6402,8 +6286,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 267,
-                        "line_start": 254,
+                        "line_end": 258,
+                        "line_start": 245,
                         "message": "Configuring now",
                         "name": "add comment, set status",
                         "notes": "",
@@ -6568,8 +6452,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 206,
-                        "line_start": 185,
+                        "line_end": 197,
+                        "line_start": 176,
                         "name": "decision",
                         "notes": "",
                         "number": 3,
@@ -6785,8 +6669,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 164,
-                        "line_start": 146,
+                        "line_end": 155,
+                        "line_start": 137,
                         "name": "filter",
                         "notes": "",
                         "number": 1,
@@ -7240,8 +7124,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 376,
-                        "line_start": 360,
+                        "line_end": 367,
+                        "line_start": 351,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -7381,6 +7265,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             },
@@ -7424,8 +7311,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 389,
-                        "line_start": 376,
+                        "line_end": 380,
+                        "line_start": 367,
                         "message": "Configuring now",
                         "name": "set status, add note",
                         "notes": "",
@@ -7557,6 +7444,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             },
@@ -7600,8 +7490,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 360,
-                        "line_start": 348,
+                        "line_end": 351,
+                        "line_start": 339,
                         "message": "Configuring now",
                         "name": "pin",
                         "notes": "",
@@ -7764,9 +7654,9 @@
                         ],
                         "join_code": "def join_Filter_Banned_Countries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('join_Filter_Banned_Countries() called')\n\n    # check if all connected incoming actions are done i.e. have succeeded or failed\n    if phantom.actions_done([ 'file_reputation_1', 'geolocate_ip_1', 'domain_reputation_2' ]):\n        \n        # call connected block \"Filter_Banned_Countries\"\n        Filter_Banned_Countries(container=container, handle=handle)\n    \n    return",
                         "join_optional": [],
-                        "join_start": 337,
-                        "line_end": 348,
-                        "line_start": 306,
+                        "join_start": 328,
+                        "line_end": 339,
+                        "line_start": 297,
                         "name": "filter",
                         "notes": "",
                         "number": 3,
@@ -7873,45 +7763,6 @@
                         "z": 204
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "436ad5c9-6c0f-4b2d-b02d-847abcc7ecca",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "9a37017f-1157-4d3a-b6e0-02c73c6d2db5",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "8c5eb35b-ee33-49b0-b57c-61e9ad71038c",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 205
-                    },
-                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -7963,6 +7814,9 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             },
@@ -7993,8 +7847,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 397,
-                        "line_start": 389,
+                        "line_end": 388,
+                        "line_start": 380,
                         "message": "Configuring now",
                         "name": "phantom_playbook_course/Log File Hashes",
                         "notes": "",
@@ -8146,8 +8000,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 146,
-                        "line_start": 108,
+                        "line_end": 137,
+                        "line_start": 99,
                         "message": "A potentially malicious file download has been detected on a local server with IP\naddress . Notify IT team?\n{0}",
                         "name": "prompt",
                         "notes": "",
@@ -8339,8 +8193,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 105,
-                        "line_end": 108,
-                        "line_start": 87,
+                        "line_end": 99,
+                        "line_start": 78,
                         "name": "decision",
                         "notes": "",
                         "number": 1,
@@ -8445,6 +8299,367 @@
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 209
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "09ef3ec7-3d68-4674-8c7a-78691267ee98",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "9a37017f-1157-4d3a-b6e0-02c73c6d2db5",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "d653c028-a5f2-4250-afab-0bd1d0b0924a",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 210
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "47c8db6a-8117-4107-ab1f-285bb52b5599",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "d653c028-a5f2-4250-afab-0bd1d0b0924a",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "11ff6099-1b12-4017-a4d3-47f01732d31b",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 213
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "47efe5be-1343-4f7c-916c-a5822eb5cad7",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "d653c028-a5f2-4250-afab-0bd1d0b0924a",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "805cf94c-3fec-4be8-baef-fc7656753271",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 214
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "a10e75a6-9b70-4203-9ceb-da13efcbbdc4",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "d653c028-a5f2-4250-afab-0bd1d0b0924a",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "ea9a7713-dce4-496f-a53d-f2538fef69fb",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 215
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "85ca2a5d-2e7c-491d-ae6d-100b78c88f1d",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "d653c028-a5f2-4250-afab-0bd1d0b0924a",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "8c5eb35b-ee33-49b0-b57c-61e9ad71038c",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 216
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#637282",
+                                "transform": "rotate(45 30 70)"
+                            },
+                            ".inPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 4
+                            },
+                            ".outPorts>.port-0": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                },
+                                "ref-x": 83,
+                                "ref-y": 40
+                            },
+                            ".outPorts>.port-0>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def Ran_Before(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('Ran_Before() called')\n\n    # check for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.source_data_identifier\", \"!=\", \"Investigation Lab\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched_artifacts_1 or matched_results_1:\n        geolocate_ip_1(action=action, success=success, container=container, results=results, handle=handle)\n        file_reputation_1(action=action, success=success, container=container, results=results, handle=handle)\n        domain_reputation_2(action=action, success=success, container=container, results=results, handle=handle)\n        Check_hash(action=action, success=success, container=container, results=results, handle=handle)\n        return\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Ran Before",
+                        "description": "",
+                        "hasElse": false,
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "d653c028-a5f2-4250-afab-0bd1d0b0924a",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 408,
+                        "line_start": 388,
+                        "name": "decision",
+                        "notes": "",
+                        "number": 4,
+                        "order": 22,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "outputs": [
+                            {
+                                "conditions": [
+                                    {
+                                        "comparison": "!=",
+                                        "data_type": "",
+                                        "param": "artifact:*.source_data_identifier",
+                                        "value": "Investigation Lab"
+                                    }
+                                ],
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 20,
+                            "y": 280
+                        },
+                        "previous_function": "",
+                        "previous_name": "Ran_Before",
+                        "show_number": true,
+                        "size": {
+                            "height": 82,
+                            "width": 82
+                        },
+                        "state": "decision",
+                        "status": "",
+                        "type": "coa.Decision",
+                        "warn": "",
+                        "z": 217
                     }
                 ]
             },
@@ -8453,7 +8668,7 @@
         "schema": 3,
         "version": "4.8.24304"
     },
-    "create_time": "2020-04-17T18:37:52.492838+00:00",
+    "create_time": "2020-04-17T19:00:48.539943+00:00",
     "draft_mode": false,
     "labels": [
         "file download"
