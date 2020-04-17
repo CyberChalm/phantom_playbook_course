@@ -327,7 +327,7 @@ def Filter_Banned_Countries(action=None, success=None, container=None, results=N
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_2 or matched_results_2:
-        format_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
+        Closing_comment(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
 
     return
 
@@ -354,8 +354,8 @@ def Banned_Country_Pin(action=None, success=None, container=None, results=None, 
 
     return
 
-def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('format_2() called')
+def Closing_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('Closing_comment() called')
     
     template = """Origin country {0} is low risk, closing event."""
 
@@ -364,7 +364,7 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
         "geolocate_ip_1:action_result.data.*.country_name",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+    phantom.format(container=container, template=template, parameters=parameters, name="Closing_comment")
 
     set_status_6(container=container)
 
