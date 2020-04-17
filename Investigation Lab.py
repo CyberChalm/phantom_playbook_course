@@ -139,7 +139,7 @@ address . Notify IT team?
         },
     ]
 
-    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="Notify_IT", parameters=parameters, response_types=response_types, callback=prompt_timeout)
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=1, name="Notify_IT", parameters=parameters, response_types=response_types, callback=prompt_timeout)
 
     return
 
