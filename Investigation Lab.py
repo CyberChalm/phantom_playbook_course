@@ -366,14 +366,20 @@ def Closing_comment(action=None, success=None, container=None, results=None, han
 
     phantom.format(container=container, template=template, parameters=parameters, name="Closing_comment")
 
-    set_status_6(container=container)
+    set_status_add_note_6(container=container)
 
     return
 
-def set_status_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('set_status_6() called')
+def set_status_add_note_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('set_status_add_note_6() called')
+
+    formatted_data_1 = phantom.get_format_data(name='Closing_comment')
 
     phantom.set_status(container=container, status="Closed")
+
+    note_title = "Closing comment"
+    note_content = formatted_data_1
+    phantom.add_note(container=container, note_type="general", title=note_title, content=note_content)
 
     return
 
