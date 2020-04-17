@@ -268,8 +268,6 @@ def Promote_Reason(action=None, success=None, container=None, results=None, hand
     
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
-    id_value = container.get('id', None)
-
     # collect data for 'Promote_Reason' call
     results_data_1 = phantom.collect2(container=container, datapath=['Notify_IT:action_result.parameter.message', 'Notify_IT:action_result.parameter.context.artifact_id'], action_results=results)
 
@@ -281,7 +279,7 @@ def Promote_Reason(action=None, success=None, container=None, results=None, hand
             'container_id': "",
             'name': "User created artifact",
             'contains': "",
-            'source_data_identifier': id_value,
+            'source_data_identifier': "Investigation Lab",
             'label': "event",
             'cef_value': results_item_1[0],
             'cef_name': results_item_1[0],
