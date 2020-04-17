@@ -89,13 +89,16 @@ def High_positives(action=None, success=None, container=None, results=None, hand
         container=container,
         action_results=results,
         conditions=[
-            ["file_reputation_1:action_result.summary.positives", ">", 10],
+            ["file_reputation_1:action_result.summary.positives", ">", 10000],
         ])
 
     # call connected blocks if condition 1 matched
     if matched_artifacts_1 or matched_results_1:
         filter_1(action=action, success=success, container=container, results=results, handle=handle)
         return
+
+    # call connected blocks for 'else' condition 2
+    filter_2(action=action, success=success, container=container, results=results, handle=handle)
 
     return
 
@@ -127,13 +130,19 @@ address . Notify IT team?
     #responses:
     response_types = [
         {
-            "prompt": "",
+            "prompt": "Notify IT?",
             "options": {
                 "type": "list",
                 "choices": [
                     "Yes",
                     "No",
                 ]
+            },
+        },
+        {
+            "prompt": "Briefly describe reason for decision.",
+            "options": {
+                "type": "message",
             },
         },
     ]
@@ -176,6 +185,9 @@ def prompt_timeout(action=None, success=None, container=None, results=None, hand
         event_promote(action=action, success=success, container=container, results=results, handle=handle)
         return
 
+    # call connected blocks for 'else' condition 2
+    pin_2(action=action, success=success, container=container, results=results, handle=handle)
+
     return
 
 def event_promote(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -192,6 +204,70 @@ def event_promote(action=None, success=None, container=None, results=None, handl
     # call connected blocks if condition 1 matched
     if matched_artifacts_1 or matched_results_1:
         return
+
+    # call connected blocks for 'else' condition 2
+    add_comment_set_status_3(action=action, success=success, container=container, results=results, handle=handle)
+
+    return
+
+def filter_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('filter_2() called')
+
+    # collect filtered artifact ids for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["file_reputation_1:action_result.status", "!=", ""],
+        ],
+        name="filter_2:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        format_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    return
+
+def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('format_1() called')
+    
+    template = """Virus positives {0} are below threshold 10, closing event."""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "artifact:*.cef.sourceDnsDomain",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+
+    set_status_1(container=container)
+
+    return
+
+def set_status_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('set_status_1() called')
+
+    phantom.set_status(container=container, status="Closed")
+
+    return
+
+def pin_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('pin_2() called')
+
+    phantom.pin(container=container, data="", message="Awaiting Action", pin_type="card", pin_style="red", name="User failed to promote event within time limit")
+
+    return
+
+def add_comment_set_status_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('add_comment_set_status_3() called')
+
+    results_data_1 = phantom.collect2(container=container, datapath=['Notify_IT:action_result.parameter.message'], action_results=results)
+
+    results_item_1_0 = [item[0] for item in results_data_1]
+
+    phantom.comment(container=container, comment=results_item_1_0)
+
+    phantom.set_status(container=container, status="Closed")
 
     return
 
