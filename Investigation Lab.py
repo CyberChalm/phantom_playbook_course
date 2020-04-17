@@ -16,6 +16,9 @@ def on_start(container):
     # call 'domain_reputation_2' block
     domain_reputation_2(container=container)
 
+    # call 'Check_hash' block
+    Check_hash(container=container)
+
     return
 
 def geolocate_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -380,6 +383,14 @@ def set_status_add_note_6(action=None, success=None, container=None, results=Non
     note_title = "Closing comment"
     note_content = formatted_data_1
     phantom.add_note(container=container, note_type="general", title=note_title, content=note_content)
+
+    return
+
+def Check_hash(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('Check_hash() called')
+    
+    # call playbook "phantom_playbook_course/Log File Hashes", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("phantom_playbook_course/Log File Hashes", container=container)
 
     return
 
