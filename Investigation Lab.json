@@ -5104,7 +5104,7 @@
                                 "opacity": 1
                             },
                             "g.delete": {
-                                "display": "block"
+                                "display": "none"
                             },
                             "g.delete image": {
                                 "opacity": 1
@@ -8456,7 +8456,7 @@
     "create_time": "2020-04-17T18:37:52.492838+00:00",
     "draft_mode": false,
     "labels": [
-        "*"
+        "file download"
     ],
     "tags": []
 }
