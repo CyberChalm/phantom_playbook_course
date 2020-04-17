@@ -177,7 +177,7 @@ def prompt_timeout(action=None, success=None, container=None, results=None, hand
         container=container,
         action_results=results,
         conditions=[
-            ["Notify_IT:action_result.status", "==", "status = “success”"],
+            ["Notify_IT:action_result.summary.responses.1", "==", "status = “success”"],
         ])
 
     # call connected blocks if condition 1 matched
