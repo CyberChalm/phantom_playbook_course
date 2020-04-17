@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "a42e98679832483e50c63c09d7e8f112a36fdcd4",
+            "hash": "16ed951af1ac1d54a70a082f200096700276056a",
             "joint": {
                 "cells": [
                     {
@@ -4573,7 +4573,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def High_positives(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('High_positives() called')\n\n    # check for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"file_reputation_1:action_result.summary.positives\", \">\", 5000],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched_artifacts_1 or matched_results_1:\n        Notify_IT(action=action, success=success, container=container, results=results, handle=handle)\n        return\n\n    # call connected blocks for 'else' condition 2\n\n    return",
+                        "block_code": "def High_positives(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('High_positives() called')\n\n    # check for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"file_reputation_1:action_result.summary.positives\", \">\", 10],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched_artifacts_1 or matched_results_1:\n        Notify_IT(action=action, success=success, container=container, results=results, handle=handle)\n        return\n\n    # call connected blocks for 'else' condition 2\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -4614,7 +4614,7 @@
                                         "comparison": ">",
                                         "data_type": "",
                                         "param": "file_reputation_1:action_result.summary.positives",
-                                        "value": "5000"
+                                        "value": "10"
                                     }
                                 ],
                                 "display": "If",
@@ -4711,7 +4711,7 @@
         "schema": 3,
         "version": "4.8.24304"
     },
-    "create_time": "2020-04-17T12:47:29.310064+00:00",
+    "create_time": "2020-04-17T12:48:13.547620+00:00",
     "draft_mode": false,
     "labels": [
         "*"
