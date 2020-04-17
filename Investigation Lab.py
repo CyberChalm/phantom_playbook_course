@@ -89,7 +89,7 @@ def High_positives(action=None, success=None, container=None, results=None, hand
         container=container,
         action_results=results,
         conditions=[
-            ["file_reputation_1:action_result.summary.positives", ">", 10000],
+            ["file_reputation_1:action_result.summary.positives", ">", 10],
         ])
 
     # call connected blocks if condition 1 matched
