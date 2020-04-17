@@ -35,7 +35,7 @@ def geolocate_ip_1(action=None, success=None, container=None, results=None, hand
                 'context': {'artifact_id': container_item[1]},
             })
 
-    phantom.act("geolocate ip", parameters=parameters, assets=['maxmind'], callback=join_High_positives, name="geolocate_ip_1")
+    phantom.act("geolocate ip", parameters=parameters, assets=['maxmind'], callback=join_Filter_Banned_Countries, name="geolocate_ip_1")
 
     return
 
@@ -56,7 +56,7 @@ def domain_reputation_2(action=None, success=None, container=None, results=None,
                 'context': {'artifact_id': container_item[1]},
             })
 
-    phantom.act("domain reputation", parameters=parameters, app={ "name": 'VirusTotal' }, callback=join_High_positives, name="domain_reputation_2")
+    phantom.act("domain reputation", parameters=parameters, app={ "name": 'VirusTotal' }, callback=join_Filter_Banned_Countries, name="domain_reputation_2")
 
     return
 
@@ -77,7 +77,7 @@ def file_reputation_1(action=None, success=None, container=None, results=None, h
                 'context': {'artifact_id': container_item[1]},
             })
 
-    phantom.act("file reputation", parameters=parameters, assets=['virustotal'], callback=join_High_positives, name="file_reputation_1")
+    phantom.act("file reputation", parameters=parameters, assets=['virustotal'], callback=join_Filter_Banned_Countries, name="file_reputation_1")
 
     return
 
@@ -100,17 +100,6 @@ def High_positives(action=None, success=None, container=None, results=None, hand
     # call connected blocks for 'else' condition 2
     filter_2(action=action, success=success, container=container, results=results, handle=handle)
 
-    return
-
-def join_High_positives(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('join_High_positives() called')
-
-    # check if all connected incoming actions are done i.e. have succeeded or failed
-    if phantom.actions_done([ 'geolocate_ip_1', 'domain_reputation_2', 'file_reputation_1' ]):
-        
-        # call connected block "High_positives"
-        High_positives(container=container, handle=handle)
-    
     return
 
 def Notify_IT(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -308,6 +297,47 @@ def Promote_Reason(action=None, success=None, container=None, results=None, hand
         })
 
     phantom.act("add artifact", parameters=parameters, assets=['phantom'], callback=Promote_to_Case, name="Promote_Reason")
+
+    return
+
+def Filter_Banned_Countries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('Filter_Banned_Countries() called')
+
+    # collect filtered artifact ids for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["geolocate_ip_1:action_result.data.*.country_name", "==", "custom_list:Banned Countries"],
+        ],
+        name="Filter_Banned_Countries:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        Banned_Country_Pin(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    return
+
+def join_Filter_Banned_Countries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('join_Filter_Banned_Countries() called')
+
+    # check if all connected incoming actions are done i.e. have succeeded or failed
+    if phantom.actions_done([ 'file_reputation_1', 'geolocate_ip_1', 'domain_reputation_2' ]):
+        
+        # call connected block "Filter_Banned_Countries"
+        Filter_Banned_Countries(container=container, handle=handle)
+    
+    return
+
+def Banned_Country_Pin(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('Banned_Country_Pin() called')
+
+    results_data_1 = phantom.collect2(container=container, datapath=['geolocate_ip_1:action_result.data.*.country_name'], action_results=results)
+
+    results_item_1_0 = [item[0] for item in results_data_1]
+
+    phantom.pin(container=container, data=results_item_1_0, message="Banned country detected", pin_type="card", pin_style="red", name=None)
+    High_positives(container=container)
 
     return
 
