@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "d47410d5401f0a403afe41cbd031c3c67438fd5e",
+            "hash": "dc1fe5b2705e1fd7da183a399ef489bd103c72d2",
             "joint": {
                 "cells": [
                     {
@@ -1144,8 +1144,8 @@
                             }
                         },
                         "position": {
-                            "x": 620,
-                            "y": 460
+                            "x": 640,
+                            "y": 440
                         },
                         "previous_function": "",
                         "previous_name": "domain_reputation_2",
@@ -1492,12 +1492,12 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 296,
-                        "line_start": 283,
+                        "line_end": 327,
+                        "line_start": 314,
                         "name": "",
                         "notes": "",
                         "number": 0,
-                        "order": 16,
+                        "order": 17,
                         "outPorts": [],
                         "ports": {
                             "groups": {
@@ -2032,8 +2032,8 @@
                             }
                         },
                         "position": {
-                            "x": 1220,
-                            "y": 400
+                            "x": 1060,
+                            "y": 700
                         },
                         "previous_function": "",
                         "previous_name": "filter_2",
@@ -2239,8 +2239,8 @@
                             }
                         },
                         "position": {
-                            "x": 1420,
-                            "y": 660
+                            "x": 1380,
+                            "y": 700
                         },
                         "previous_function": "",
                         "previous_name": "format_1",
@@ -2450,8 +2450,8 @@
                             }
                         },
                         "position": {
-                            "x": 1820,
-                            "y": 740
+                            "x": 1640,
+                            "y": 700
                         },
                         "previous_function": "",
                         "previous_name": "set_status_1",
@@ -2505,46 +2505,6 @@
                         },
                         "type": "link",
                         "z": 86
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "bd47d4f9-420c-48bf-88aa-8becfbb4a6c3",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "dcafda3b-5495-4abb-b8cf-250a6bb32877",
-                            "port": "out-2",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "f9fdaeed-d776-4b3b-a7ba-8928cdbd54bf",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 91
                     },
                     {
                         "attrs": {
@@ -2785,7 +2745,7 @@
                             }
                         },
                         "position": {
-                            "x": 1820,
+                            "x": 1640,
                             "y": 420
                         },
                         "previous_function": "",
@@ -2801,209 +2761,6 @@
                         "type": "coa.API",
                         "warn": false,
                         "z": 116
-                    },
-                    {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "363776d7-17cc-47a5-8ff9-aaebd88660a2",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "8c1647dd-875c-474c-aa7c-bfe6fce527a3",
-                            "port": "out-1",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "849c086c-2cd0-419c-8cc5-34d8d8e4d897",
-                            "selector": ".port-body[type=\"input\"]"
-                        },
-                        "type": "link",
-                        "z": 123
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".playbook": {
-                                "text": "Promote to Case"
-                            },
-                            ".title": {
-                                "text": "Playbook"
-                            },
-                            "g.code image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def Promote_to_Case(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('Promote_to_Case() called')\n    \n    # call playbook \"phantom_playbook_course/Case Promotion Lab\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(\"phantom_playbook_course/Case Promotion Lab\", container=container, name=\"Promote_to_Case\")\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "connected_to_start": true,
-                        "connection_name": "Notify IT",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "Promote to Case",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "849c086c-2cd0-419c-8cc5-34d8d8e4d897",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 283,
-                        "line_start": 275,
-                        "message": "Configuring now",
-                        "name": "phantom_playbook_course/Case Promotion Lab",
-                        "notes": "",
-                        "number": 1,
-                        "order": 15,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "playbook": "phantom_playbook_course/Case Promotion Lab",
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1820,
-                            "y": 280
-                        },
-                        "previous_function": "",
-                        "previous_name": "Promote_to_Case",
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "callplaybook",
-                        "status": "",
-                        "title": "Playbook",
-                        "type": "coa.CallPlaybook",
-                        "warn": false,
-                        "z": 125
                     },
                     {
                         "attrs": {
@@ -3246,7 +3003,7 @@
                             }
                         },
                         "position": {
-                            "x": 1820,
+                            "x": 1640,
                             "y": 580
                         },
                         "previous_function": "",
@@ -6138,7 +5895,7 @@
                             }
                         },
                         "position": {
-                            "x": 1400,
+                            "x": 1280,
                             "y": 280
                         },
                         "previous_function": "",
@@ -6320,7 +6077,7 @@
                             }
                         },
                         "position": {
-                            "x": 1220,
+                            "x": 1140,
                             "y": 280
                         },
                         "previous_function": "",
@@ -6395,7 +6152,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def event_promote(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('event_promote() called')\n\n    # check for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"Notify_IT:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched_artifacts_1 or matched_results_1:\n        Promote_to_Case(action=action, success=success, container=container, results=results, handle=handle)\n        return\n\n    # call connected blocks for 'else' condition 2\n    add_comment_set_status_3(action=action, success=success, container=container, results=results, handle=handle)\n\n    return",
+                        "block_code": "def event_promote(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('event_promote() called')\n\n    # check for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        action_results=results,\n        conditions=[\n            [\"Notify_IT:action_result.summary.responses.0\", \"==\", \"Yes\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched_artifacts_1 or matched_results_1:\n        Promote_Reason(action=action, success=success, container=container, results=results, handle=handle)\n        return\n\n    # call connected blocks for 'else' condition 2\n    add_comment_set_status_3(action=action, success=success, container=container, results=results, handle=handle)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -6510,7 +6267,7 @@
                             }
                         },
                         "position": {
-                            "x": 1700,
+                            "x": 1520,
                             "y": 280
                         },
                         "previous_function": "",
@@ -6700,7 +6457,7 @@
                             }
                         },
                         "position": {
-                            "x": 1560,
+                            "x": 1400,
                             "y": 280
                         },
                         "previous_function": "",
@@ -6715,6 +6472,829 @@
                         "type": "coa.Decision",
                         "warn": "",
                         "z": 149
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "9b6a17ec-9c99-4327-b152-c39fb9d8617b",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "8c1647dd-875c-474c-aa7c-bfe6fce527a3",
+                            "port": "out-1",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "ffd690ff-4cb0-496d-972d-e1d6fd948918",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 150
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "d9374f09-4b92-474f-9393-6c89d19b96d8",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "ffd690ff-4cb0-496d-972d-e1d6fd948918",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "849c086c-2cd0-419c-8cc5-34d8d8e4d897",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 154
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "4a7f6eda-80c9-4390-ad54-715126926a2a",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "dcafda3b-5495-4abb-b8cf-250a6bb32877",
+                            "port": "out-2",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(2) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "f9fdaeed-d776-4b3b-a7ba-8928cdbd54bf",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 157
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".playbook": {
+                                "text": "Promote to Case"
+                            },
+                            ".title": {
+                                "text": "Playbook"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def Promote_to_Case(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('Promote_to_Case() called')\n    \n    # call playbook \"phantom_playbook_course/Case Promotion Lab\", returns the playbook_run_id\n    playbook_run_id = phantom.playbook(\"phantom_playbook_course/Case Promotion Lab\", container=container, name=\"Promote_to_Case\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "connected_to_start": true,
+                        "connection_name": "Promote Reason",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Promote to Case",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "849c086c-2cd0-419c-8cc5-34d8d8e4d897",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 283,
+                        "line_start": 275,
+                        "message": "Configuring now",
+                        "name": "phantom_playbook_course/Case Promotion Lab",
+                        "notes": "",
+                        "number": 1,
+                        "order": 15,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "playbook": "phantom_playbook_course/Case Promotion Lab",
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1860,
+                            "y": 280
+                        },
+                        "previous_function": "",
+                        "previous_name": "Promote_to_Case",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "callplaybook",
+                        "status": "",
+                        "title": "Playbook",
+                        "type": "coa.CallPlaybook",
+                        "warn": false,
+                        "z": 158
+                    },
+                    {
+                        "action": "add artifact",
+                        "action_type": "generic",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "cef_dictionary": "",
+                            "cef_name": "Notify_IT:action_result.parameter.message",
+                            "cef_value": "Notify_IT:action_result.parameter.message",
+                            "container_id": "",
+                            "contains": "",
+                            "label": "event",
+                            "name": "User created artifact",
+                            "source_data_identifier": "container:id"
+                        },
+                        "angle": 0,
+                        "app": "Phantom",
+                        "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "add artifact",
+                                "actions": [
+                                    "test connectivity",
+                                    "update artifact",
+                                    "find artifacts",
+                                    "add listitem",
+                                    "find listitem",
+                                    "add artifact",
+                                    "deflate item",
+                                    "export container",
+                                    "import container",
+                                    "create container",
+                                    "get action result",
+                                    "update list",
+                                    "no op"
+                                ],
+                                "active": true,
+                                "app_name": "Phantom",
+                                "app_version": "2.1.25",
+                                "appid": "deb82aa9-22cc-4675-9cf1-534b8d006eb7",
+                                "asset_name": "phantom",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "cef_dictionary": "",
+                                    "cef_name": "Notify_IT:action_result.parameter.message",
+                                    "cef_value": "Notify_IT:action_result.parameter.message",
+                                    "container_id": "",
+                                    "contains": "",
+                                    "label": "event",
+                                    "name": "User created artifact",
+                                    "source_data_identifier": "container:id"
+                                },
+                                "has_app": true,
+                                "id": 8,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "phantom",
+                                "output": [
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_dictionary",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.cef_name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_path": "action_result.parameter.cef_value",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_path": "action_result.parameter.container_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.contains",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.label",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.name",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.source_data_identifier",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.existing_artifact_id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.failed",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.success",
+                                        "data_type": "boolean"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.artifact id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.container id",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "contains": [
+                                            "url"
+                                        ],
+                                        "data_path": "action_result.summary.server",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "cef_dictionary": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF JSON",
+                                        "key": "cef_dictionary",
+                                        "order": 6,
+                                        "required": false
+                                    },
+                                    "cef_name": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "CEF Name",
+                                        "key": "cef_name",
+                                        "order": 4,
+                                        "required": false,
+                                        "value_list": [
+                                            "act",
+                                            "app",
+                                            "applicationProtocol",
+                                            "baseEventCount",
+                                            "bytesIn",
+                                            "bytesOut",
+                                            "cat",
+                                            "cn1",
+                                            "cn1Label",
+                                            "cn2",
+                                            "cn2Label",
+                                            "cn3",
+                                            "cn3Label",
+                                            "cnt",
+                                            "cs1",
+                                            "cs1Label",
+                                            "cs2",
+                                            "cs2Label",
+                                            "cs3",
+                                            "cs3Label",
+                                            "cs4",
+                                            "cs4Label",
+                                            "cs5",
+                                            "cs5Label",
+                                            "cs6",
+                                            "cs6Label",
+                                            "destinationAddress",
+                                            "destinationDnsDomain",
+                                            "destinationHostName",
+                                            "destinationMacAddress",
+                                            "destinationNtDomain",
+                                            "destinationPort",
+                                            "destinationProcessName",
+                                            "destinationServiceName",
+                                            "destinationTranslatedAddress",
+                                            "destinationTranslatedPort",
+                                            "destinationUserId",
+                                            "destinationUserName",
+                                            "destinationUserPrivileges",
+                                            "deviceAction",
+                                            "deviceAddress",
+                                            "deviceCustomDate1",
+                                            "deviceCustomDate1Label",
+                                            "deviceCustomDate2",
+                                            "deviceCustomDate2Label",
+                                            "deviceCustomNumber1",
+                                            "deviceCustomNumber1Label",
+                                            "deviceCustomNumber2",
+                                            "deviceCustomNumber2Label",
+                                            "deviceCustomNumber3",
+                                            "deviceCustomNumber3Label",
+                                            "deviceCustomString1",
+                                            "deviceCustomString1Label",
+                                            "deviceCustomString2",
+                                            "deviceCustomString2Label",
+                                            "deviceCustomString3",
+                                            "deviceCustomString3Label",
+                                            "deviceCustomString4",
+                                            "deviceCustomString4Label",
+                                            "deviceCustomString5",
+                                            "deviceCustomString5Label",
+                                            "deviceCustomString6",
+                                            "deviceCustomString6Label",
+                                            "deviceDirection",
+                                            "deviceDnsDomain",
+                                            "deviceEventCategory",
+                                            "deviceExternalId",
+                                            "deviceFacility",
+                                            "deviceHostname",
+                                            "deviceInboundInterface",
+                                            "deviceMacAddress",
+                                            "deviceOutboundInterface",
+                                            "deviceProcessName",
+                                            "deviceTranslatedAddress",
+                                            "dhost",
+                                            "dmac",
+                                            "dntdom",
+                                            "dpriv",
+                                            "dproc",
+                                            "dpt",
+                                            "dst",
+                                            "duid",
+                                            "duser",
+                                            "dvc",
+                                            "dvchost",
+                                            "end",
+                                            "endTime",
+                                            "eventOutcome",
+                                            "externalId",
+                                            "fileCreateTime",
+                                            "fileHash",
+                                            "fileHashMd5",
+                                            "fileHashSha1",
+                                            "fileHashSha256",
+                                            "fileHashSha512",
+                                            "fileId",
+                                            "fileModificationTime",
+                                            "fileName",
+                                            "filePath",
+                                            "filePermission",
+                                            "fileSize",
+                                            "fileType",
+                                            "fname",
+                                            "fsize",
+                                            "in",
+                                            "message",
+                                            "msg",
+                                            "oldfileCreateTime",
+                                            "oldfileHash",
+                                            "oldfileId",
+                                            "oldfileModificationTime",
+                                            "oldfileName",
+                                            "oldfilePath",
+                                            "oldfilePermission",
+                                            "oldfileType",
+                                            "oldfsize",
+                                            "out",
+                                            "outcome",
+                                            "proto",
+                                            "receiptTime",
+                                            "request",
+                                            "requestClientApplication",
+                                            "requestCookies",
+                                            "requestMethod",
+                                            "requestURL",
+                                            "rt",
+                                            "shost",
+                                            "smac",
+                                            "sntdom",
+                                            "sourceAddress",
+                                            "sourceDnsDomain",
+                                            "sourceHostName",
+                                            "sourceMacAddress",
+                                            "sourceNtDomain",
+                                            "sourcePort",
+                                            "sourceServiceName",
+                                            "sourceTranslatedAddress",
+                                            "sourceTranslatedPort",
+                                            "sourceUserId",
+                                            "sourceUserName",
+                                            "sourceUserPrivileges",
+                                            "spriv",
+                                            "spt",
+                                            "src",
+                                            "start",
+                                            "startTime",
+                                            "suid",
+                                            "suser",
+                                            "transportProtocol"
+                                        ]
+                                    },
+                                    "cef_value": {
+                                        "contains": [
+                                            "*"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Value",
+                                        "key": "cef_value",
+                                        "order": 5,
+                                        "primary": true,
+                                        "required": false
+                                    },
+                                    "container_id": {
+                                        "contains": [
+                                            "phantom container id"
+                                        ],
+                                        "data_type": "numeric",
+                                        "default": null,
+                                        "description": "Numeric container ID for the new artifact",
+                                        "key": "container_id",
+                                        "order": 1,
+                                        "required": false
+                                    },
+                                    "contains": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Data type for each CEF field",
+                                        "key": "contains",
+                                        "order": 7,
+                                        "required": false
+                                    },
+                                    "label": {
+                                        "data_type": "string",
+                                        "default": "event",
+                                        "description": "Artifact label (default: event)",
+                                        "key": "label",
+                                        "order": 2,
+                                        "required": false
+                                    },
+                                    "name": {
+                                        "data_type": "string",
+                                        "default": "User created artifact",
+                                        "description": "Name of the new artifact",
+                                        "key": "name",
+                                        "order": 0,
+                                        "required": false
+                                    },
+                                    "source_data_identifier": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Source Data Idenitifier",
+                                        "key": "source_data_identifier",
+                                        "order": 3,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Phantom",
+                                "product_vendor": "Phantom",
+                                "targets": "8",
+                                "type": "information"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "Promote Reason"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Generic"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_generic.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def Promote_Reason(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('Promote_Reason() called')\n    \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    id_value = container.get('id', None)\n\n    # collect data for 'Promote_Reason' call\n    results_data_1 = phantom.collect2(container=container, datapath=['Notify_IT:action_result.parameter.message', 'Notify_IT:action_result.parameter.context.artifact_id'], action_results=results)\n\n    parameters = []\n    \n    # build parameters list for 'Promote_Reason' call\n    for results_item_1 in results_data_1:\n        parameters.append({\n            'name': \"User created artifact\",\n            'container_id': \"\",\n            'label': \"event\",\n            'source_data_identifier': id_value,\n            'cef_name': results_item_1[0],\n            'cef_value': results_item_1[0],\n            'cef_dictionary': \"\",\n            'contains': \"\",\n            # context (artifact id) is added to associate results with the artifact\n            'context': {'artifact_id': results_item_1[1]},\n        })\n\n    phantom.act(\"add artifact\", parameters=parameters, assets=['phantom'], callback=Promote_to_Case, name=\"Promote_Reason\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "Notify IT",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Promote Reason",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ffd690ff-4cb0-496d-972d-e1d6fd948918",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 314,
+                        "line_start": 283,
+                        "message": "Configuring now",
+                        "name": "add artifact",
+                        "notes": "",
+                        "number": 1,
+                        "order": 16,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1640,
+                            "y": 280
+                        },
+                        "previous_function": "",
+                        "previous_name": "Promote_Reason",
+                        "required_params": {
+                            "source_data_identifier": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Generic",
+                        "type": "coa.Action",
+                        "warn": "",
+                        "z": 159
                     }
                 ]
             },
@@ -6723,7 +7303,7 @@
         "schema": 3,
         "version": "4.8.24304"
     },
-    "create_time": "2020-04-17T15:25:23.628700+00:00",
+    "create_time": "2020-04-17T16:23:10.086135+00:00",
     "draft_mode": false,
     "labels": [
         "*"
