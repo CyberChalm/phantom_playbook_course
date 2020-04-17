@@ -316,6 +316,19 @@ def Filter_Banned_Countries(action=None, success=None, container=None, results=N
     if matched_artifacts_1 or matched_results_1:
         Banned_Country_Pin(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
+    # collect filtered artifact ids for 'if' condition 2
+    matched_artifacts_2, matched_results_2 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["geolocate_ip_1:action_result.data.*.country_name", "!=", "custom_list:Banned Countries"],
+        ],
+        name="Filter_Banned_Countries:condition_2")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_2 or matched_results_2:
+        format_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
+
     return
 
 def join_Filter_Banned_Countries(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
@@ -338,6 +351,29 @@ def Banned_Country_Pin(action=None, success=None, container=None, results=None, 
 
     phantom.pin(container=container, data=results_item_1_0, message="Banned country detected", pin_type="card", pin_style="red", name=None)
     High_positives(container=container)
+
+    return
+
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('format_2() called')
+    
+    template = """Origin country {0} is low risk, closing event."""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "geolocate_ip_1:action_result.data.*.country_name",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    set_status_6(container=container)
+
+    return
+
+def set_status_6(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
+    phantom.debug('set_status_6() called')
+
+    phantom.set_status(container=container, status="Closed")
 
     return
 
