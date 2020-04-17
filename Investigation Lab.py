@@ -267,28 +267,10 @@ def Promote_Reason(action=None, success=None, container=None, results=None, hand
     phantom.debug('Promote_Reason() called')
     
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
-    
-    # collect data for 'Promote_Reason' call
-    results_data_1 = phantom.collect2(container=container, datapath=['Notify_IT:action_result.parameter.message', 'Notify_IT:action_result.parameter.context.artifact_id'], action_results=results)
 
     parameters = []
-    
-    # build parameters list for 'Promote_Reason' call
-    for results_item_1 in results_data_1:
-        parameters.append({
-            'container_id': "",
-            'name': "User created artifact",
-            'contains': "",
-            'source_data_identifier': "Investigation Lab",
-            'label': "event",
-            'cef_value': results_item_1[0],
-            'cef_name': results_item_1[0],
-            'cef_dictionary': "",
-            # context (artifact id) is added to associate results with the artifact
-            'context': {'artifact_id': results_item_1[1]},
-        })
 
-    phantom.act("add artifact", parameters=parameters, assets=['phantom'], callback=Promote_to_Case, name="Promote_Reason")
+    phantom.act("add artifact", parameters=parameters, callback=Promote_to_Case, name="Promote_Reason")
 
     return
 
@@ -390,7 +372,7 @@ def Ran_Before(action=None, success=None, container=None, results=None, handle=N
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["artifact:*.source_data_identifier", "!=", "\"Investigation Lab\""],
+            ["artifact:*.source_data_identifier", "!=", "Investigation Lab"],
         ])
 
     # call connected blocks if condition 1 matched
