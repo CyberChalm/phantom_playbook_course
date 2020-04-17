@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "a0ba43d9340f4196ffaa80b54a00094290167e90",
+            "hash": "85bf5fcb7be019f0e54a0d63373108b729e746d8",
             "joint": {
                 "cells": [
                     {
@@ -1035,7 +1035,7 @@
                                 "opacity": 1
                             },
                             "g.delete": {
-                                "display": "none"
+                                "display": "block"
                             },
                             "g.error": {
                                 "opacity": 0
@@ -8542,9 +8542,12 @@
                             },
                             "g.notes": {
                                 "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
                             }
                         },
-                        "block_code": "def Ran_Before(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('Ran_Before() called')\n\n    # check for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.source_data_identifier\", \"!=\", \"Investigation Lab\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched_artifacts_1 or matched_results_1:\n        geolocate_ip_1(action=action, success=success, container=container, results=results, handle=handle)\n        file_reputation_1(action=action, success=success, container=container, results=results, handle=handle)\n        domain_reputation_2(action=action, success=success, container=container, results=results, handle=handle)\n        Check_hash(action=action, success=success, container=container, results=results, handle=handle)\n        return\n\n    return",
+                        "block_code": "def Ran_Before(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('Ran_Before() called')\n\n    # check for 'if' condition 1\n    matched_artifacts_1, matched_results_1 = phantom.condition(\n        container=container,\n        conditions=[\n            [\"artifact:*.source_data_identifier\", \"!=\", \"\\\"Investigation Lab\\\"\"],\n        ])\n\n    # call connected blocks if condition 1 matched\n    if matched_artifacts_1 or matched_results_1:\n        geolocate_ip_1(action=action, success=success, container=container, results=results, handle=handle)\n        file_reputation_1(action=action, success=success, container=container, results=results, handle=handle)\n        domain_reputation_2(action=action, success=success, container=container, results=results, handle=handle)\n        Check_hash(action=action, success=success, container=container, results=results, handle=handle)\n        return\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -8584,7 +8587,7 @@
                                         "comparison": "!=",
                                         "data_type": "",
                                         "param": "artifact:*.source_data_identifier",
-                                        "value": "Investigation Lab"
+                                        "value": "\"Investigation Lab\""
                                     }
                                 ],
                                 "display": "If",
@@ -8668,7 +8671,7 @@
         "schema": 3,
         "version": "4.8.24304"
     },
-    "create_time": "2020-04-17T19:00:48.539943+00:00",
+    "create_time": "2020-04-17T19:12:49.039608+00:00",
     "draft_mode": false,
     "labels": [
         "file download"

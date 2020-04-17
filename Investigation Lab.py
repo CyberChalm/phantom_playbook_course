@@ -392,7 +392,7 @@ def Ran_Before(action=None, success=None, container=None, results=None, handle=N
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["artifact:*.source_data_identifier", "!=", "Investigation Lab"],
+            ["artifact:*.source_data_identifier", "!=", "\"Investigation Lab\""],
         ])
 
     # call connected blocks if condition 1 matched
